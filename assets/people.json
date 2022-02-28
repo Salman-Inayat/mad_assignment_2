@@ -1,0 +1,28 @@
+{
+  "people":[
+    {
+      "id": "0",
+      "name": "John"
+     
+    },
+    {
+      "id": "1",
+      "name": "Salman"
+    },
+    {
+      "id": "2",
+      "name": "Jameel"
+     
+    },
+    {
+      "id": "3",
+      "name": "Danish"
+     
+    },
+    {
+      "id": "4",
+      "name": "Armaan"
+     
+    }
+  ]
+}
