@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
-      title: 'Kindacode.com',
+      title: 'MAD Assignment 02',
       home: HomePage(),
     );
   }
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'MAD Assignment 2',
+          'Salman Inayat - 263202',
         ),
       ),
       body: Padding(
@@ -63,13 +63,10 @@ class _HomePageState extends State<HomePage> {
               child: const Text('Fetch JSON'),
               onPressed: readJson,
             ),
-            // TODO: Add a Text widget that displays the name of the person
             Text(
               person.isEmpty ? '' : person.first['name'],
               style: const TextStyle(fontSize: 25),
             ),
-
-            // TODO: Add a Text widget that displays the number of the person
             Text(
               number.isEmpty ? '' : number,
               style: const TextStyle(fontSize: 25),
