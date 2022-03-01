@@ -1,28 +1,32 @@
 {
-  "people":[
-    {
-      "id": "0",
-      "name": "John"
-     
-    },
+  "people": [
     {
       "id": "1",
-      "name": "Salman"
+      "name": "John"
     },
     {
       "id": "2",
-      "name": "Jameel"
-     
+      "name": "Salman"
     },
     {
       "id": "3",
-      "name": "Danish"
-     
+      "name": "Jameel"
     },
     {
       "id": "4",
+      "name": "Danish"
+    },
+    {
+      "id": "5",
       "name": "Armaan"
-     
+    },
+    {
+      "id": "6",
+      "name": "Sajid"
+    },
+    {
+      "id": "7",
+      "name": "Waheed"
     }
   ]
 }

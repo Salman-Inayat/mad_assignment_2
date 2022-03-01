@@ -1,32 +1,32 @@
 {
-  "people":[
+  "numbers": [
     {
-      
       "name": "John",
-     "phoneNo": "1234567890"
-
+      "phoneNo": 1234424234
     },
     {
-    
       "name": "Salman",
-    "phoneNo":"1234567890"
+      "phoneNo": 97685634543
     },
     {
-     
       "name": "Jameel",
-     "phoneNo":"1234567890"
-
+      "phoneNo": 2345646755
     },
     {
       "name": "Danish",
-     "phoneNo":"1234567890"
-
+      "phoneNo": 98977523456
     },
     {
-      
       "name": "Armaan",
-     "phoneNo":"1234567890"
-
+      "phoneNo": 7835256645
+    },
+    {
+      "name": "Sajid",
+      "phoneNo": 37623564635
+    },
+    {
+      "name": "Waheed",
+      "phoneNo": 746342534254
     }
   ]
 }

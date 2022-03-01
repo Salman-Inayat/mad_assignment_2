@@ -29,46 +29,69 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List person = [];
-  String number = '';
+  int? _dialId = 0;
+  List persons = [];
+  List numbers = [];
+  String _name = '';
+  // ignore: avoid_init_to_null
+  var _number = null;
 
-  Future<void> readJson() async {
+  Future<void> fetchNumber() async {
     final String response = await rootBundle.loadString('assets/people.json');
     final responseData = await json.decode(response);
 
     setState(() {
-      person = responseData;
+      persons = responseData['people'];
+      _name = responseData['people'][_dialId]['name'];
     });
 
-    final String numbers = await rootBundle.loadString('assets/numbers.json');
-    final numbersData = await json.decode(numbers);
-    number = numbersData
-        .firstWhere((element) => element['name'] == person[2]['name']);
+    final String numbersResponse =
+        await rootBundle.loadString('assets/numbers.json');
+    final numbersData = await json.decode(numbersResponse);
+
+    setState(() {
+      numbers = numbersData['numbers'];
+    });
+
+    var number = numbers.firstWhere((element) => element['name'] == _name);
+    setState(() {
+      _number = number['phoneNo'];
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Salman Inayat - 263202',
-        ),
+        centerTitle: false,
+        title: const Text('Salman Inayat - 263202'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Enter dialpad id',
+              ),
+              onChanged: (value) {
+                setState(() {
+                  if (value != ''){
+                    _dialId = int.parse(value);
+                  }
+                });
+              },
+            ),
             ElevatedButton(
-              child: const Text('Fetch JSON'),
-              onPressed: readJson,
+              child: const Text('Fetch user data'),
+              onPressed: fetchNumber,
             ),
             Text(
-              person.isEmpty ? '' : person.first['name'],
+              _name != null && _name != '' ? _name : '',
               style: const TextStyle(fontSize: 25),
             ),
             Text(
-              number.isEmpty ? '' : number,
+              _number != null && _number != 0 ? _number.toString() : '',
               style: const TextStyle(fontSize: 25),
             ),
           ],
